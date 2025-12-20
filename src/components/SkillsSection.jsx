@@ -6,20 +6,21 @@ const skills=[
     {name:"HTML/CSS",level:95,category:"frontend"},
     {name:"JavaScript",level:90,category:"frontend"},
     {name:"React",level:85,category:"frontend"},
-    {name:"TypeScript",level:80,category:"frontend"},
-    {name:"Tailwind CSS",level:70,category:"frontend"},
-    {name:"Next.js",level:75,category:"frontend"},
+    {name:"TypeScript",level:50,category:"frontend"},
+    {name:"Tailwind CSS",level:50,category:"frontend"},
+    {name:"Redux Toolkit",level:50,category:"frontend"},
 
     // Backend Skills
-    {name:"Node.js",level:80,category:"backend"},
-    {name:"Express.js",level:75,category:"backend"},
-    {name:"MongoDB",level:70,category:"backend"},
+    {name:"Node.js",level:50,category:"backend"},
+    {name:"Express.js",level:40,category:"backend"},
     {name:"MySQL",level:65,category:"backend"},
 
     //Tools
     {name:"Git/GitHub",level:85,category:"tools"},  
+    {name:"GraphQL",level:30,category:"tools"},
     {name:"Figma",level:75,category:"tools"},
     {name:"VS Code",level:90,category:"tools"},
+    {name:"Docker",level:20,category:"tools"},
     
 ];
 const categories=["all","frontend","backend","tools"];

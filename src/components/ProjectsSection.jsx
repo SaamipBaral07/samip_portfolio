@@ -5,7 +5,7 @@ const projects=[
         id:1,
         title:"Firebase Social Media",
         description:"A social media app built with Firebase for backend services, React and TypeScript for the frontend.",
-        image:"/projects/project1.jpg",
+        image:"/projects/project-1.png",
         tags:["React", "Firebase", "TypeScript"],
         demoUrl:"https://firebasemedia.vercel.app",
         githubUrl:"#"
@@ -14,19 +14,29 @@ const projects=[
         id:2,
         title:"Aastra: E-commerce Store",
         description:"A full-stack eCommerce site using Java Servlets, JSP, and MySQL with DAO and MVC architecture.",
-        image:"/projects/project2.jpg",
+        image:"/projects/project2.png",
         tags:["Java", "MySQL", "JSP","Servlets"],
         demoUrl:"#",
-        githubUrl:"#"
+        githubUrl:"https://github.com/SaamipBaral07/Aastra"
     },
     {
         id:3,
         title:"Movie Search App",
         description:"Trending Movie Search and Favorites App using React, Styled-components, and The Movie Database API.",
-        image:"/projects/project3.jpg",
+        image:"/projects/project3.png",
         tags:["React", "JS","CSS", "API"],
-        demoUrl:"#",
-        githubUrl:"#"
+        demoUrl:"https://movie-web-zeta-silk.vercel.app/",
+        githubUrl:"https://github.com/SaamipBaral07/MovieWeb"
+    }
+    ,
+    {
+        id:4,
+        title:"React Based ECommerce",
+        description:"A React-based eCommerce website with product listings, shopping cart, and checkout functionality.",
+        image:"/projects/project4.png",
+        tags:["React", "JavaScript", "CSS"],
+        demoUrl:"https://ecommerce-pied-phi.vercel.app/",
+        githubUrl:"https://github.com/SaamipBaral07/Ecommerce"
     }
 
 ]

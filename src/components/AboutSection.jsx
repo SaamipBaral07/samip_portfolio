@@ -14,15 +14,16 @@ export const AboutSection = () => {
                         With a strong foundation in front-end technologies, I specialize in building responsive and interactive interfaces that enhance user experience. 
                     </p>
                     <p className="text-muted-foreground">
-                        I am a web developer with a passion for creating engaging and user-friendly web applications. With a strong foundation in front-end technologies, I specialize in building responsive and interactive interfaces that enhance user experience.
+                        I am a web developer with a passion for creating engaging and user-friendly web applications. With a strong foundation in front-end technologies, I specialize in building responsive and interactive websites that enhance user experience.
                     </p>
                 <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
                     <a href="#contact" className="cosmic-button">
                         Get in Touch
                     </a>
-                    <a href="" className="px-6 py-2 rounded-full border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
+                    <a href="/projects/Samip_Baral_CV.pdf" className="px-6 py-2 rounded-full border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
                         Download CV 
                     </a>
+                    
                 </div>
             </div>
             <div className="grid grid-cols-1 gap-6">
@@ -43,8 +44,8 @@ export const AboutSection = () => {
                         <User className="h-6 w-6 text-primary" />
                         </div>
                         <div className="text-left">
-                            <h4 className="font-semibold text-lg">UI/UX Design</h4>
-                            <p className="text-muted-foreground"> Design intuitive user interfaces and seamless user experiences.</p>
+                            <h4 className="font-semibold text-lg">Data Science</h4>
+                            <p className="text-muted-foreground">Analyzing data to extract insights and drive informed decision-making.</p>
                         </div>
                     </div>
  
