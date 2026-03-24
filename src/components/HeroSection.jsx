@@ -1,4 +1,4 @@
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Twitter, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -68,12 +68,29 @@ export const HeroSection = () => {
                         <Typewriter phrases={professionalPhrases} />
 
                         <p className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0 leading-relaxed pt-2">
-                            I create stellar web experiences with modern technologies. Specializing in front-end development, I build interfaces that are both beautiful and functional.
+                            I craft robust full-stack digital solutions, combining powerful backend architectures with my passion for specialized front-end development to create interfaces that are both beautifully immersive and highly functional.
                         </p>
-                        <div className="pt-6 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-                            <a href="#projects" className="cosmic-button inline-flex items-center justify-center">
+                        
+                        <div className="pt-6 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-8">
+                            <a href="#projects" className="cosmic-button inline-flex items-center justify-center shrink-0">
                                 View My Work
                             </a>
+                            
+                            {/* Social Icons */}
+                            <div className="flex items-center gap-5 text-muted-foreground">
+                                <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.5)] transition-all hover:scale-110">
+                                    <Github className="w-6 h-6" />
+                                </a>
+                                <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.5)] transition-all hover:scale-110">
+                                    <Linkedin className="w-6 h-6" />
+                                </a>
+                                <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter" className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.5)] transition-all hover:scale-110">
+                                    <Twitter className="w-6 h-6" />
+                                </a>
+                                <a href="mailto:info@example.com" aria-label="Email" className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.5)] transition-all hover:scale-110">
+                                    <Mail className="w-6 h-6" />
+                                </a>
+                            </div>
                         </div>
                     </motion.div>
 

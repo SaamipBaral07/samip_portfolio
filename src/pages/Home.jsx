@@ -1,37 +1,34 @@
-import { ThemeToggle } from "../components/ThemeToggle"
 import { StarBackground } from "../components/StarBackground";
 import { Navbar } from "../components/Navbar";
 import { HeroSection } from "../components/HeroSection";
 import { AboutSection } from "../components/AboutSection";
 import { SkillsSection } from "../components/SkillsSection";
 import { ProjectsSection } from "../components/ProjectsSection";
+import { CertificationsSection } from "../components/CertificationsSection";
 import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
+
 export const Home = () => {
-  return <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-    {/* Theme Toggle Button */}
-    <ThemeToggle />
+  return (
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-primary-foreground">
+      {/* Background Effects */}
+      <StarBackground />
 
-    {/* Background Effects*/ }
-    <StarBackground />
+      {/* Global NavBar (Includes Theme Toggle) */}
+      <Navbar />
 
-    {/* NavBar*/ }
-    <Navbar />
+      {/* Main Content Sections */}
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <CertificationsSection />
+        <ContactSection />
+      </main>
 
-    {/* Main Content */}
-    <main>
-      <HeroSection/>
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ContactSection />
-    </main>
-
-    <Footer />
-
-    {/* Footer */ }
-
-
-  </div>
-  
-}
+      {/* Footer Minimalist */}
+      <Footer />
+    </div>
+  );
+};
