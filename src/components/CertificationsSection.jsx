@@ -9,24 +9,24 @@ export const CertificationsSection = () => {
     ];
 
     return (
-        <section id="certifications" className="py-24 px-4 relative z-10">
+        <section id="certifications" className="py-16 md:py-24 px-4 relative z-10">
             <div className="container mx-auto max-w-6xl">
                 <motion.div 
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-16 space-y-4"
+                    className="text-center mb-10 md:mb-16 space-y-3 md:space-y-4"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
                         My <span className="text-primary">Certifications</span>
                     </h2>
-                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                    <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
                         A showcase of my professional qualifications, technical achievements, and ongoing learning journey.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 lg:gap-12">
                     {certifications.map((imgSrc, index) => (
                         <motion.div
                             key={index}
@@ -35,7 +35,7 @@ export const CertificationsSection = () => {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             whileHover={{ y: -10 }}
-                            className="group relative rounded-2xl overflow-hidden border border-border/40 bg-card/20 backdrop-blur-md p-4 lg:p-6 transition-all duration-500 hover:border-primary/50 shadow-lg hover:shadow-[0_20px_40px_-15px_rgba(139,92,246,0.2)]"
+                            className="group relative rounded-2xl overflow-hidden border border-border/40 bg-card/20 backdrop-blur-md p-3 sm:p-4 lg:p-6 transition-all duration-500 hover:border-primary/50 shadow-lg hover:shadow-[0_20px_40px_-15px_rgba(139,92,246,0.2)]"
                         >
                             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-background/50 flex items-center justify-center">
                                 {/* Glimmer effect on hover */}

@@ -66,20 +66,20 @@ export const Navbar = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
                 className={cn(
-                    "fixed top-0 left-0 right-0 z-50 flex justify-center w-full px-4 transition-all duration-300 pointer-events-none",
-                    isScrolled ? "pt-4" : "pt-6"
+                    "fixed top-0 left-0 right-0 z-50 flex justify-center w-full px-3 sm:px-4 transition-all duration-300 pointer-events-none",
+                    isScrolled ? "pt-3 sm:pt-4" : "pt-4 sm:pt-6"
                 )}
             >
                 <div 
                     className={cn(
                         "container max-w-5xl flex items-center justify-between transition-all duration-500 rounded-full pointer-events-auto shadow-2xl overflow-hidden",
                         isScrolled 
-                            ? "py-3 px-6 bg-background/70 backdrop-blur-2xl border border-white/5 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.1)] ring-1 ring-border/5" 
-                            : "py-4 px-6 bg-transparent border-transparent shadow-none"
+                            ? "py-2.5 sm:py-3 px-4 sm:px-6 bg-background/70 backdrop-blur-2xl border border-white/5 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.1)] ring-1 ring-border/5" 
+                            : "py-3 sm:py-4 px-4 sm:px-6 bg-transparent border-transparent shadow-none"
                     )}
                 >
                     <a className="flex items-center group relative overflow-visible" href="#hero">
-                        <span className="text-xl font-extrabold tracking-tight relative z-10 transition-all duration-500 block">
+                        <span className="text-[1.05rem] sm:text-xl font-extrabold tracking-tight relative z-10 transition-all duration-500 block">
                             <span className="bg-gradient-to-r from-foreground to-foreground/80 group-hover:from-primary group-hover:to-purple-500 bg-clip-text text-transparent transition-all duration-500">
                                 Samip
                             </span>

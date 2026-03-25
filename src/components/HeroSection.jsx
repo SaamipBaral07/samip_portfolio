@@ -31,7 +31,7 @@ const Typewriter = ({ phrases }) => {
 
     return (
         <div className="min-h-[40px] md:min-h-[48px] flex items-center justify-center md:justify-start">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground/80">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground/80">
                 {currentText}
                 <motion.span
                     animate={{ opacity: [1, 0] }}
@@ -47,9 +47,9 @@ export const HeroSection = () => {
     const professionalPhrases = ["IT scholar", "Full stack developer", "React/NextJS Developer"];
 
     return (
-        <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden pt-16">
-            <div className="container max-w-6xl mx-auto z-10">
-                <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 lg:gap-20">
+        <section id="hero" className="relative min-h-[100svh] md:min-h-screen flex items-center justify-center px-4 overflow-hidden pt-20 md:pt-16 pb-20 md:pb-8">
+            <div className="container max-w-6xl mx-auto z-10 pb-6 md:pb-0">
+                <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-12 lg:gap-20">
 
                     {/* Text Section */}
                     <motion.div
@@ -58,7 +58,7 @@ export const HeroSection = () => {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="flex-1 text-center md:text-left space-y-4 md:space-y-6"
                     >
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight pb-2">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight pb-2">
                             Hi, I'm <br className="hidden md:block" />
                             <span className="text-primary">Samip </span>
                             <span className="bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">Baral</span>
@@ -67,11 +67,11 @@ export const HeroSection = () => {
                         {/* Typewriter Effect */}
                         <Typewriter phrases={professionalPhrases} />
 
-                        <p className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0 leading-relaxed pt-2">
-                            I craft robust full-stack digital solutions, combining powerful backend architectures with my passion for specialized front-end development to create interfaces that are both beautifully immersive and highly functional.
+                        <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0 leading-relaxed pt-1 md:pt-2">
+                            I craft robust full-stack solutions, blending strong backend architecture with specialized front-end design to build immersive, highly functional interfaces.
                         </p>
 
-                        <div className="pt-6 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-8">
+                        <div className="pt-5 md:pt-6 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6 sm:gap-8">
                             <a href="#projects" className="cosmic-button inline-flex items-center justify-center shrink-0">
                                 View My Work
                             </a>
@@ -79,16 +79,16 @@ export const HeroSection = () => {
                             {/* Social Icons */}
                             <div className="flex items-center gap-5 text-muted-foreground">
                                 <a href="https://github.com/SaamipBaral07" target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.5)] transition-all hover:scale-110">
-                                    <Github className="w-6 h-6" />
+                                    <Github className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </a>
                                 <a href="https://www.linkedin.com/in/samip-baral007/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.5)] transition-all hover:scale-110">
-                                    <Linkedin className="w-6 h-6" />
+                                    <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </a>
                                 <a href="https://www.instagram.com/saamip07/" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.5)] transition-all hover:scale-110">
-                                    <Instagram className="w-6 h-6" />
+                                    <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </a>
                                 <a href="mailto:baralsamip4@gmail.com" aria-label="Email" className="hover:text-primary hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.5)] transition-all hover:scale-110">
-                                    <Mail className="w-6 h-6" />
+                                    <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </a>
                             </div>
                         </div>
@@ -99,9 +99,9 @@ export const HeroSection = () => {
                         initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
                         animate={{ opacity: 1, scale: 1, rotate: 0 }}
                         transition={{ duration: 1, ease: [0.175, 0.885, 0.32, 1.275] }}
-                        className="flex-1 flex justify-center md:justify-end relative w-full max-w-[280px] md:max-w-[400px]"
+                        className="flex-1 flex justify-center md:justify-end relative w-full max-w-[240px] sm:max-w-[280px] md:max-w-[400px]"
                     >
-                        <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                        <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
                             {/* Animated Background Glow */}
                             <motion.div
                                 animate={{ scale: [1, 1.05, 1], rotate: [0, 90, 0] }}
@@ -140,7 +140,7 @@ export const HeroSection = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 1 }}
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+                className="absolute bottom-3 right-3 md:bottom-8 md:left-1/2 md:right-auto md:-translate-x-1/2 flex flex-col items-center rounded-full px-3 py-2 md:px-0 md:py-0 bg-background/70 md:bg-transparent backdrop-blur-md md:backdrop-blur-0 border border-border/30 md:border-0"
             >
                 <span className="text-sm text-muted-foreground mb-2 tracking-widest uppercase text-[10px]">Scroll</span>
                 <div className="animate-bounce">

@@ -25,7 +25,7 @@ export const Footer = () => {
             {/* Ambient glow */}
             <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[600px] h-32 bg-primary/5 rounded-full blur-[60px] pointer-events-none" />
 
-            <div className="container mx-auto max-w-6xl px-4 py-14 relative z-10">
+            <div className="container mx-auto max-w-6xl px-4 py-10 md:py-14 relative z-10">
 
                 {/* Top CTA Area */}
                 <motion.div
@@ -33,7 +33,7 @@ export const Footer = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-12"
+                    className="text-center mb-9 md:mb-12"
                 >
                     <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3 tracking-tight">
                         Let's Build Something <span className="text-primary">Remarkable</span>
@@ -43,7 +43,7 @@ export const Footer = () => {
                     </p>
                     <a
                         href="mailto:baralsamip4@gmail.com"
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white text-sm font-semibold hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:scale-105 active:scale-95 transition-all duration-300"
+                        className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 rounded-full bg-primary text-white text-xs sm:text-sm font-semibold hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:scale-105 active:scale-95 transition-all duration-300"
                     >
                         <Mail size={16} />
                         baralsamip4@gmail.com
@@ -51,7 +51,7 @@ export const Footer = () => {
                 </motion.div>
 
                 {/* Divider */}
-                <div className="border-t border-border/40 mb-10" />
+                <div className="border-t border-border/40 mb-8 md:mb-10" />
 
                 {/* Middle Grid: Navigation + Socials */}
                 <motion.div
@@ -59,7 +59,7 @@ export const Footer = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mb-8 md:mb-10"
                 >
                     {/* Nav Links */}
                     <div>
@@ -104,7 +104,7 @@ export const Footer = () => {
                 </motion.div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-border/40 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="border-t border-border/40 pt-5 md:pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4">
                     <p className="text-sm text-muted-foreground">
                         &copy; {new Date().getFullYear()}{" "}
                         <span className="font-semibold text-foreground">Samip Baral</span>

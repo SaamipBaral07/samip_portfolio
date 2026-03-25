@@ -2,20 +2,44 @@ import { Database, Layout, Server, TerminalSquare } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const AboutSection = () => {
+    const mainCardVariants = {
+        hidden: {
+            opacity: 0,
+            y: 44,
+            scale: 0.96,
+            rotateX: 5,
+            filter: "blur(14px)",
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            rotateX: 0,
+            filter: "blur(0px)",
+            transition: {
+                type: "spring",
+                stiffness: 95,
+                damping: 16,
+                mass: 0.8,
+                delay: 0.1,
+            },
+        },
+    };
+
     return (
-        <section id="about" className="py-10 md:py-12 relative z-10 overflow-hidden flex items-center min-h-[calc(100vh-4rem)]">
+        <section id="about" className="py-14 md:py-12 relative z-10 overflow-hidden flex items-center min-h-0 md:min-h-[calc(100vh-4rem)]">
             {/* Ambient Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[800px] h-[300px] md:h-[400px] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
 
-            <div className="container mx-auto max-w-6xl px-4 lg:px-8">
+            <div className="container mx-auto max-w-6xl px-4 md:px-5 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-6 md:mb-8"
+                    className="text-center mb-7 md:mb-8"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white transition-colors duration-300">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white transition-colors duration-300">
                         About <span className="text-primary">Me</span>
                     </h2>
                 </motion.div>
@@ -25,15 +49,32 @@ export const AboutSection = () => {
                     {/* Main Premium Bio Card (Left Part) */}
                     <div className="lg:col-span-7 relative group">
                         {/* Gradient Border Wrapper */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-purple-500/10 to-transparent dark:from-primary/50 rounded-[2rem] -m-[1px]" />
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.98 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.8, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+                            className="absolute inset-0 bg-gradient-to-br from-primary/30 via-purple-500/10 to-transparent dark:from-primary/50 rounded-[2rem] -m-[1px]"
+                        />
 
                         <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            variants={mainCardVariants}
+                            initial="hidden"
+                            whileInView="visible"
                             viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.6, delay: 0.1 }}
-                            className="relative h-full rounded-[2rem] overflow-hidden bg-white/75 dark:bg-[#0A0A0A]/90 backdrop-blur-2xl border border-gray-100 dark:border-white/5 p-5 lg:p-6 shadow-[0_4px_24px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.6)] flex flex-col justify-between text-left transition-all duration-500"
+                            whileHover={{ y: -6, scale: 1.007, rotateX: -0.45 }}
+                            style={{ transformPerspective: 1200, transformOrigin: "50% 50%" }}
+                            className="relative h-full rounded-[2rem] overflow-hidden bg-white/75 dark:bg-[#0A0A0A]/90 backdrop-blur-2xl border border-gray-100 dark:border-white/5 p-5 lg:p-6 shadow-[0_4px_24px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.6)] flex flex-col justify-between text-left transition-all duration-700"
                         >
+                            <motion.div
+                                aria-hidden="true"
+                                initial={{ x: "-140%", opacity: 0 }}
+                                whileInView={{ x: ["-140%", "140%"], opacity: [0, 0.22, 0] }}
+                                viewport={{ once: true, margin: "-60px" }}
+                                transition={{ duration: 1.7, delay: 0.55, ease: "easeInOut" }}
+                                className="pointer-events-none absolute inset-y-0 w-28 bg-linear-to-r from-transparent via-white/40 to-transparent -skew-x-12"
+                            />
+
                             {/* Decorative internal glows */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 dark:bg-primary/20 rounded-full blur-[80px] -z-10 group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors duration-700" />
                             <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/5 dark:bg-purple-500/10 rounded-full blur-[60px] -z-10" />
@@ -45,11 +86,28 @@ export const AboutSection = () => {
                                     <span>Who am I?</span>
                                 </div>
 
-                                <h3 className="text-2xl lg:text-[1.7rem] font-bold mb-3 md:mb-4 leading-tight text-gray-900 dark:text-white transition-colors">
-                                    Driven IT Student <br className="hidden md:block" /> & Full-Stack Developer
-                                </h3>
+                                <motion.h3 className="text-xl sm:text-2xl lg:text-[1.7rem] font-bold mb-3 md:mb-4 leading-tight text-gray-900 dark:text-white transition-colors overflow-hidden">
+                                    <motion.span
+                                        initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
+                                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                        viewport={{ once: true, margin: "-70px" }}
+                                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                                        className="block"
+                                    >
+                                        Driven IT Student
+                                    </motion.span>
+                                    <motion.span
+                                        initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
+                                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                        viewport={{ once: true, margin: "-70px" }}
+                                        transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+                                        className="block text-primary/90"
+                                    >
+                                        & Full-Stack Developer
+                                    </motion.span>
+                                </motion.h3>
 
-                                <div className="space-y-3 text-gray-600 dark:text-gray-300/90 text-[14px] md:text-base leading-relaxed font-light transition-colors">
+                                <div className="space-y-3 text-gray-600 dark:text-gray-300/90 text-sm md:text-base leading-relaxed font-light transition-colors">
                                     <p>
                                         I am an IT student and an enthusiastic full-stack web developer with a profound passion for front-end architecture, particularly navigating the modern <strong className="text-gray-900 dark:text-white font-semibold bg-gray-100 dark:bg-white/10 px-1.5 py-0.5 rounded shadow-sm transition-colors">React & Next.js</strong> ecosystems.
                                     </p>
@@ -87,7 +145,7 @@ export const AboutSection = () => {
                                 </div>
                                 <div className="flex-1">
                                     <h4 className="text-base md:text-lg font-bold mb-0.5 text-gray-900 dark:text-white group-hover:text-primary transition-colors">PERN Stack</h4>
-                                    <p className="text-[10px] md:text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                                    <p className="text-[11px] md:text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
                                         PostgreSQL, Express, React, and Node.js core backbone.
                                     </p>
                                 </div>
@@ -108,7 +166,7 @@ export const AboutSection = () => {
                                 </div>
                                 <div className="flex-1">
                                     <h4 className="text-base md:text-lg font-bold mb-0.5 text-gray-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">Django + Next.js</h4>
-                                    <p className="text-[10px] md:text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                                    <p className="text-[11px] md:text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
                                         Blazing-fast, SEO-friendly frontends with Python backend.
                                     </p>
                                 </div>
@@ -130,7 +188,7 @@ export const AboutSection = () => {
                                 </div>
                                 <div className="flex-1">
                                     <h4 className="text-base md:text-lg font-bold mb-0.5 text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">Real-World Solutions</h4>
-                                    <p className="text-[10px] md:text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                                    <p className="text-[11px] md:text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
                                         Deploying dynamic apps solving complex business problems end-to-end.
                                     </p>
                                 </div>

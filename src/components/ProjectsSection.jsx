@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight, ExternalLink, Github, ImageIcon, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -69,6 +69,24 @@ const projects = [
 export const ProjectsSection = () => {
     const [selectedProject, setSelectedProject] = useState(null);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
+    const [showAllMobileProjects, setShowAllMobileProjects] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 767px)");
+        const updateMobileState = () => {
+            setIsMobile(mediaQuery.matches);
+        };
+
+        updateMobileState();
+        mediaQuery.addEventListener("change", updateMobileState);
+
+        return () => {
+            mediaQuery.removeEventListener("change", updateMobileState);
+        };
+    }, []);
+
+    const visibleProjects = isMobile && !showAllMobileProjects ? projects.slice(0, 3) : projects;
 
     const openGallery = (project) => {
         if (project.gallery && project.gallery.length > 0) {
@@ -97,57 +115,33 @@ export const ProjectsSection = () => {
         }
     };
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.15,
-            },
-        },
-    };
-
-    const cardVariants = {
-        hidden: { y: 40, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                type: "spring",
-                stiffness: 100,
-                damping: 15,
-            },
-        },
-    };
-
     return (
-        <section id="projects" className="py-24 px-4 relative w-full overflow-hidden">
+        <section id="projects" className="py-16 md:py-24 px-4 relative w-full overflow-hidden">
             <div className="container mx-auto max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    className="text-center mb-10 md:mb-16"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">
                         Featured <span className="text-primary">Projects</span>
                     </h2>
-                    <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
+                    <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
                         Here are some of my recent projects that showcase my skills and creativity. Each project is a testament to my dedication to building functional and visually appealing applications.
                     </p>
                 </motion.div>
 
-                <motion.div 
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                <motion.div
+                    layout
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8"
                 >
-                    {projects.map((project, key) => (
-                        <motion.div 
-                            variants={cardVariants}
+                    {visibleProjects.map((project, key) => (
+                        <motion.div
+                            initial={{ opacity: 0, y: 26, scale: 0.985 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            transition={{ duration: 0.45, ease: "easeOut", delay: (key % 3) * 0.06 }}
                             key={project.id || key} 
                             className={`group relative bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 flex flex-col h-full ${project.gallery ? "cursor-pointer" : ""}`}
                             onClick={() => project.gallery && openGallery(project)}
@@ -160,7 +154,7 @@ export const ProjectsSection = () => {
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                                 />
                                 
-                                <div className="absolute top-4 right-4 z-20 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                                <div className="absolute top-3 right-3 md:top-4 md:right-4 z-20 flex gap-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 translate-y-0 md:translate-y-2 md:group-hover:translate-y-0">
                                     {project.gallery && (
                                         <button 
                                             onClick={(e) => { e.stopPropagation(); openGallery(project); }} 
@@ -183,7 +177,7 @@ export const ProjectsSection = () => {
                                 </div>
                             </div>
                             
-                            <div className="p-6 flex flex-col flex-grow relative z-20">
+                            <div className="p-5 md:p-6 flex flex-col flex-grow relative z-20">
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {project.tags.map((tag, idx) => (
                                         <span key={idx} className="text-[11px] uppercase tracking-wider px-3 py-1 font-semibold rounded-full bg-primary/10 text-primary border border-primary/20 shadow-sm" >
@@ -192,12 +186,12 @@ export const ProjectsSection = () => {
                                     ))}
                                 </div>
 
-                                <h3 className="text-xl md:text-2xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">{project.title}</h3>
+                                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">{project.title}</h3>
                                 <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow">
                                     {project.description}
                                 </p>
                                 
-                                <div className="mt-auto pt-4 border-t border-border/50 flex justify-between items-center">
+                                <div className="mt-auto pt-4 border-t border-border/50 flex justify-between items-center gap-3">
                                     {project.demoUrl && project.demoUrl !== "#" ? (
                                         <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors">
                                             <span>Live Demo</span> <ExternalLink size={16} />
@@ -224,15 +218,27 @@ export const ProjectsSection = () => {
                     ))}
                 </motion.div>
 
+                {isMobile && (
+                    <div className="mt-6 flex justify-center md:hidden">
+                        <button
+                            type="button"
+                            onClick={() => setShowAllMobileProjects((prev) => !prev)}
+                            className="inline-flex items-center justify-center rounded-full border border-primary/35 bg-background/75 px-5 py-2.5 text-sm font-semibold text-primary backdrop-blur-md transition-all hover:bg-primary hover:text-primary-foreground"
+                        >
+                            {showAllMobileProjects ? "Show Fewer Projects" : "Show All Projects"}
+                        </button>
+                    </div>
+                )}
+
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.4, duration: 0.5 }}
-                    className="mt-16 text-center flex justify-center"
+                    className="mt-12 md:mt-16 text-center flex justify-center"
                 >
                     <a 
-                        className="group relative inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold overflow-hidden transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/30"
+                        className="group relative inline-flex items-center gap-2 px-6 md:px-8 py-3.5 md:py-4 bg-primary text-primary-foreground rounded-full font-semibold overflow-hidden transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/30"
                         target="_blank" 
                         rel="noopener noreferrer" 
                         href="https://github.com/SaamipBaral07"
@@ -252,18 +258,18 @@ export const ProjectsSection = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 backdrop-blur-xl p-4 sm:p-8"
+                        className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 backdrop-blur-xl p-3 sm:p-8"
                         onClick={closeGallery}
                     >
                         <button 
                             onClick={closeGallery} 
-                            className="absolute top-6 right-6 z-50 p-3 bg-secondary/50 hover:bg-secondary rounded-full text-foreground transition-colors cursor-pointer"
+                            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 p-2.5 sm:p-3 bg-secondary/50 hover:bg-secondary rounded-full text-foreground transition-colors cursor-pointer"
                         >
                             <X size={24} />
                         </button>
 
                         <div 
-                            className="relative w-full max-w-6xl aspect-[16/9] flex items-center justify-center rounded-2xl overflow-hidden shadow-2xl border border-border/50 bg-card/10"
+                            className="relative w-full max-w-6xl h-[72vh] sm:h-auto sm:aspect-[16/9] flex items-center justify-center rounded-2xl overflow-hidden shadow-2xl border border-border/50 bg-card/10"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <AnimatePresence mode="wait">
@@ -283,20 +289,20 @@ export const ProjectsSection = () => {
                                 <>
                                     <button 
                                         onClick={prevImage}
-                                        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-background/60 hover:bg-background/90 backdrop-blur-md rounded-full text-foreground transition-all hover:scale-110 shadow-lg group cursor-pointer"
+                                        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 bg-background/60 hover:bg-background/90 backdrop-blur-md rounded-full text-foreground transition-all hover:scale-110 shadow-lg group cursor-pointer"
                                     >
-                                        <ChevronLeft size={28} className="group-hover:-translate-x-1 transition-transform" />
+                                        <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
                                     </button>
                                     <button 
                                         onClick={nextImage}
-                                        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-background/60 hover:bg-background/90 backdrop-blur-md rounded-full text-foreground transition-all hover:scale-110 shadow-lg group cursor-pointer"
+                                        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 bg-background/60 hover:bg-background/90 backdrop-blur-md rounded-full text-foreground transition-all hover:scale-110 shadow-lg group cursor-pointer"
                                     >
-                                        <ChevronRight size={28} className="group-hover:translate-x-1 transition-transform" />
+                                        <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
                                     </button>
                                 </>
                             )}
 
-                            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 p-3 bg-background/60 backdrop-blur-md rounded-full border border-border/50">
+                            <div className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 flex gap-2 sm:gap-3 p-2.5 sm:p-3 bg-background/60 backdrop-blur-md rounded-full border border-border/50">
                                 {selectedProject.gallery.map((_, idx) => (
                                     <button
                                         key={idx}

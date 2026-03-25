@@ -105,7 +105,7 @@ const itemVariants = {
 
 export const SkillsSection = () => {
     return (
-        <section id="skills" className="py-12 md:py-16 px-4 relative flex items-center justify-center bg-transparent">
+        <section id="skills" className="py-14 md:py-16 px-4 relative flex items-center justify-center bg-transparent">
             {/* Ambient Background Glows */}
             <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
@@ -116,14 +116,14 @@ export const SkillsSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.5 }}
-                    className="text-center mb-8"
+                    className="text-center mb-7 md:mb-8"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white transition-colors">
+                    <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white transition-colors">
                         My <span className="text-primary">Skills</span>
                     </h2>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 items-start">
                     {skillsCategories.map((category, idx) => (
                         <motion.div
                             key={idx}
@@ -140,11 +140,11 @@ export const SkillsSection = () => {
                             <div className={cn("absolute top-0 left-0 right-0 h-24 bg-gradient-to-b opacity-40 -z-10", category.colorClass)} />
                             
                             {/* Card Header */}
-                            <div className="p-5 md:p-6 flex items-center gap-3 border-b border-gray-200/50 dark:border-white/5 transition-colors">
+                            <div className="p-4 sm:p-5 md:p-6 flex items-center gap-3 border-b border-gray-200/50 dark:border-white/5 transition-colors">
                                 <div className="p-2.5 rounded-xl bg-gray-100 dark:bg-white/5 shadow-inner ring-1 ring-black/5 dark:ring-white/10 group-hover:scale-110 transition-transform duration-500">
                                     {category.icon}
                                 </div>
-                                <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white tracking-wide transition-colors">
+                                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white tracking-wide transition-colors">
                                     {category.title}
                                 </h3>
                             </div>
@@ -155,7 +155,7 @@ export const SkillsSection = () => {
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: true }}
-                                className="p-5 md:p-6 flex flex-col gap-3 flex-1"
+                                className="p-4 sm:p-5 md:p-6 flex flex-col gap-2.5 sm:gap-3 flex-1"
                             >
                                 {category.skills.map((skill, skillIdx) => (
                                     <motion.li 
