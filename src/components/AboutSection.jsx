@@ -15,7 +15,7 @@ export const AboutSection = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-6 md:mb-8"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white drop-shadow-lg">
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white transition-colors duration-300">
                         About <span className="text-primary">Me</span>
                     </h2>
                 </motion.div>
@@ -25,33 +25,33 @@ export const AboutSection = () => {
                     {/* Main Premium Bio Card (Left Part) */}
                     <div className="lg:col-span-7 relative group">
                         {/* Gradient Border Wrapper */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/50 via-purple-500/10 to-transparent rounded-[2rem] -m-[1px]" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-purple-500/10 to-transparent dark:from-primary/50 rounded-[2rem] -m-[1px]" />
 
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.6, delay: 0.1 }}
-                            className="relative h-full rounded-[2rem] overflow-hidden bg-[#0A0A0A]/90 backdrop-blur-2xl border border-white/5 p-5 lg:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.6)] flex flex-col justify-between text-left"
+                            className="relative h-full rounded-[2rem] overflow-hidden bg-white/75 dark:bg-[#0A0A0A]/90 backdrop-blur-2xl border border-gray-100 dark:border-white/5 p-5 lg:p-6 shadow-[0_4px_24px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.6)] flex flex-col justify-between text-left transition-all duration-500"
                         >
-                            {/* Decorative internal glows & noise */}
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -z-10 group-hover:bg-primary/30 transition-colors duration-700" />
-                            <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/10 rounded-full blur-[60px] -z-10" />
-                            <div className="absolute inset-0 opacity-[0.04] mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48ZmlsdGVyIGlkPSJuIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC45IiBudW1PY3RhdmVzPSIzIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI24pIiBvcGFjaXR5PSIwLjM1Ii8+PC9zdmc+')]" />
+                            {/* Decorative internal glows */}
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 dark:bg-primary/20 rounded-full blur-[80px] -z-10 group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors duration-700" />
+                            <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/5 dark:bg-purple-500/10 rounded-full blur-[60px] -z-10" />
+                            <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.04] mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48ZmlsdGVyIGlkPSJuIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC45IiBudW1PY3RhdmVzPSIzIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI24pIiBvcGFjaXR5PSIwLjM1Ii8+PC9zdmc+')]" />
 
                             <div className="relative z-10">
-                                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-primary mb-3 backdrop-blur-md shadow-sm">
+                                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 dark:bg-white/5 border border-primary/20 dark:border-white/10 text-xs font-semibold text-primary mb-3 backdrop-blur-md shadow-sm">
                                     <TerminalSquare className="w-3.5 h-3.5" />
                                     <span>Who am I?</span>
                                 </div>
 
-                                <h3 className="text-2xl lg:text-[1.7rem] font-bold mb-3 md:mb-4 leading-tight text-white drop-shadow-md">
+                                <h3 className="text-2xl lg:text-[1.7rem] font-bold mb-3 md:mb-4 leading-tight text-gray-900 dark:text-white transition-colors">
                                     Driven IT Student <br className="hidden md:block" /> & Full-Stack Developer
                                 </h3>
 
-                                <div className="space-y-3 text-gray-300/90 text-[14px] md:text-base leading-relaxed font-light">
+                                <div className="space-y-3 text-gray-600 dark:text-gray-300/90 text-[14px] md:text-base leading-relaxed font-light transition-colors">
                                     <p>
-                                        I am an IT student and an enthusiastic full-stack web developer with a profound passion for front-end architecture, particularly navigating the modern <strong className="text-white font-medium bg-white/10 px-1.5 py-0.5 rounded shadow-sm">React & Next.js</strong> ecosystems.
+                                        I am an IT student and an enthusiastic full-stack web developer with a profound passion for front-end architecture, particularly navigating the modern <strong className="text-gray-900 dark:text-white font-semibold bg-gray-100 dark:bg-white/10 px-1.5 py-0.5 rounded shadow-sm transition-colors">React & Next.js</strong> ecosystems.
                                     </p>
                                     <p>
                                         My journey involves creating stellar, dynamic websites and scalable real-world projects for clients. I don't just write code; I craft immersive digital experiences that perfectly balance eye-catching aesthetics with meticulous back-end engineering.
@@ -59,11 +59,11 @@ export const AboutSection = () => {
                                 </div>
                             </div>
 
-                            <div className="relative z-10 flex flex-col sm:flex-row gap-3 mt-4 pt-4 border-t border-white/10">
+                            <div className="relative z-10 flex flex-col sm:flex-row gap-3 mt-4 pt-4 border-t border-gray-200 dark:border-white/10 transition-colors">
                                 <a href="#contact" className="px-5 py-2 rounded-xl bg-primary text-white hover:bg-primary/90 transition-all font-medium text-xs md:text-sm flex items-center justify-center shadow-[0_0_20px_rgba(139,92,246,0.3)] min-w-[120px]">
                                     Get in Touch
                                 </a>
-                                <a href="/projects/Samip_Baral_CV.pdf" className="px-5 py-2 rounded-xl border border-white/10 bg-white/5 text-gray-200 hover:text-white hover:bg-white/10 transition-all text-xs md:text-sm flex items-center justify-center font-medium backdrop-blur-sm min-w-[120px]">
+                                <a href="/projects/Samip_Baral_CV.pdf" className="px-5 py-2 rounded-xl border border-gray-300 dark:border-white/10 bg-white dark:bg-white/5 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/10 hover:text-gray-900 dark:hover:text-white transition-all text-xs md:text-sm flex items-center justify-center font-medium backdrop-blur-sm min-w-[120px]">
                                     Download CV
                                 </a>
                             </div>
@@ -79,15 +79,15 @@ export const AboutSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: 0.2 }}
-                            className="rounded-[1.5rem] border border-white/5 bg-[#0A0A0A]/60 backdrop-blur-lg p-4 lg:p-5 relative overflow-hidden group hover:border-primary/30 transition-colors flex flex-col justify-center shadow-lg text-left"
+                            className="rounded-[1.5rem] border border-gray-200/60 dark:border-white/5 bg-white/70 dark:bg-[#0A0A0A]/60 backdrop-blur-lg p-4 lg:p-5 relative overflow-hidden group hover:border-primary/30 hover:shadow-md dark:hover:border-primary/30 transition-all flex flex-col justify-center shadow-sm dark:shadow-lg text-left"
                         >
                             <div className="flex items-center gap-3 md:gap-4 z-10 relative">
-                                <div className="p-2.5 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 text-blue-400 group-hover:scale-110 transition-transform duration-500 ring-1 ring-white/5 shadow-inner">
+                                <div className="p-2.5 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 text-blue-500 dark:text-blue-400 group-hover:scale-110 transition-transform duration-500 ring-1 ring-black/5 dark:ring-white/5 shadow-inner">
                                     <Database className="w-5 h-5 md:w-6 md:h-6" />
                                 </div>
                                 <div className="flex-1">
-                                    <h4 className="text-base md:text-lg font-semibold mb-0.5 text-white group-hover:text-primary transition-colors">PERN Stack</h4>
-                                    <p className="text-[10px] md:text-xs text-gray-400 leading-relaxed font-light">
+                                    <h4 className="text-base md:text-lg font-bold mb-0.5 text-gray-900 dark:text-white group-hover:text-primary transition-colors">PERN Stack</h4>
+                                    <p className="text-[10px] md:text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
                                         PostgreSQL, Express, React, and Node.js core backbone.
                                     </p>
                                 </div>
@@ -100,15 +100,15 @@ export const AboutSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: 0.3 }}
-                            className="rounded-[1.5rem] border border-white/5 bg-[#0A0A0A]/60 backdrop-blur-lg p-4 lg:p-5 relative overflow-hidden group hover:border-emerald-500/30 transition-colors flex flex-col justify-center shadow-lg text-left"
+                            className="rounded-[1.5rem] border border-gray-200/60 dark:border-white/5 bg-white/70 dark:bg-[#0A0A0A]/60 backdrop-blur-lg p-4 lg:p-5 relative overflow-hidden group hover:border-emerald-500/30 hover:shadow-md transition-all flex flex-col justify-center shadow-sm dark:shadow-lg text-left"
                         >
                             <div className="flex items-center gap-3 md:gap-4 z-10 relative">
-                                <div className="p-2.5 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 text-emerald-400 group-hover:scale-110 transition-transform duration-500 ring-1 ring-white/5 shadow-inner">
+                                <div className="p-2.5 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform duration-500 ring-1 ring-black/5 dark:ring-white/5 shadow-inner">
                                     <Server className="w-5 h-5 md:w-6 md:h-6" />
                                 </div>
                                 <div className="flex-1">
-                                    <h4 className="text-base md:text-lg font-semibold mb-0.5 text-white group-hover:text-emerald-400 transition-colors">Django + Next.js</h4>
-                                    <p className="text-[10px] md:text-xs text-gray-400 leading-relaxed font-light">
+                                    <h4 className="text-base md:text-lg font-bold mb-0.5 text-gray-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">Django + Next.js</h4>
+                                    <p className="text-[10px] md:text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
                                         Blazing-fast, SEO-friendly frontends with Python backend.
                                     </p>
                                 </div>
@@ -121,16 +121,16 @@ export const AboutSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: 0.4 }}
-                            className="rounded-[1.5rem] border border-white/5 bg-gradient-to-br from-[#0A0A0A]/80 to-primary/5 backdrop-blur-lg p-4 lg:p-5 relative overflow-hidden group hover:border-primary/50 transition-colors flex flex-col justify-center shadow-xl text-left"
+                            className="rounded-[1.5rem] border border-gray-200/60 dark:border-white/5 bg-gradient-to-br from-white/80 to-primary/5 dark:from-[#0A0A0A]/80 dark:to-primary/5 backdrop-blur-lg p-4 lg:p-5 relative overflow-hidden group hover:border-primary/40 dark:hover:border-primary/50 hover:shadow-md transition-all flex flex-col justify-center shadow-sm dark:shadow-xl text-left"
                         >
-                            <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-primary/20 rounded-full blur-[40px] group-hover:bg-primary/30 transition-all duration-500" />
+                            <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-primary/10 dark:bg-primary/20 rounded-full blur-[40px] group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-all duration-500" />
                             <div className="flex items-center gap-3 md:gap-4 z-10 relative">
-                                <div className="p-2.5 rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 text-purple-400 group-hover:scale-110 transition-transform duration-500 ring-1 ring-white/5 shadow-inner">
+                                <div className="p-2.5 rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform duration-500 ring-1 ring-black/5 dark:ring-white/5 shadow-inner">
                                     <Layout className="w-5 h-5 md:w-6 md:h-6" />
                                 </div>
                                 <div className="flex-1">
-                                    <h4 className="text-base md:text-lg font-semibold mb-0.5 text-white group-hover:text-purple-400 transition-colors">Real-World Solutions</h4>
-                                    <p className="text-[10px] md:text-xs text-gray-400 leading-relaxed font-light">
+                                    <h4 className="text-base md:text-lg font-bold mb-0.5 text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">Real-World Solutions</h4>
+                                    <p className="text-[10px] md:text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
                                         Deploying dynamic apps solving complex business problems end-to-end.
                                     </p>
                                 </div>

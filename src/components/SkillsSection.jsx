@@ -81,7 +81,7 @@ const ProficiencyDots = ({ level }) => {
             {[1, 2, 3].map((i) => (
                 <div 
                     key={i} 
-                    className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i <= dots ? activeClass : 'bg-white/10'}`} 
+                    className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i <= dots ? activeClass : 'bg-gray-300 dark:bg-white/10'}`} 
                 />
             ))}
         </div>
@@ -118,7 +118,7 @@ export const SkillsSection = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-8"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white drop-shadow-md">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white transition-colors">
                         My <span className="text-primary">Skills</span>
                     </h2>
                 </motion.div>
@@ -132,7 +132,7 @@ export const SkillsSection = () => {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: idx * 0.1 }}
                             className={cn(
-                                "rounded-[1.5rem] border border-white/5 bg-[#0A0A0A]/80 backdrop-blur-xl relative overflow-hidden group shadow-xl transition-all duration-500 flex flex-col h-full",
+                                "rounded-[1.5rem] border border-gray-200/60 dark:border-white/5 bg-white/70 dark:bg-[#0A0A0A]/80 backdrop-blur-xl relative overflow-hidden group shadow-md dark:shadow-xl transition-all duration-500 flex flex-col h-full",
                                 category.borderClass
                             )}
                         >
@@ -140,11 +140,11 @@ export const SkillsSection = () => {
                             <div className={cn("absolute top-0 left-0 right-0 h-24 bg-gradient-to-b opacity-40 -z-10", category.colorClass)} />
                             
                             {/* Card Header */}
-                            <div className="p-5 md:p-6 flex items-center gap-3 border-b border-white/5">
-                                <div className="p-2.5 rounded-xl bg-white/5 shadow-inner ring-1 ring-white/10 group-hover:scale-110 transition-transform duration-500">
+                            <div className="p-5 md:p-6 flex items-center gap-3 border-b border-gray-200/50 dark:border-white/5 transition-colors">
+                                <div className="p-2.5 rounded-xl bg-gray-100 dark:bg-white/5 shadow-inner ring-1 ring-black/5 dark:ring-white/10 group-hover:scale-110 transition-transform duration-500">
                                     {category.icon}
                                 </div>
-                                <h3 className="text-lg md:text-xl font-bold text-white tracking-wide">
+                                <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white tracking-wide transition-colors">
                                     {category.title}
                                 </h3>
                             </div>
@@ -164,10 +164,10 @@ export const SkillsSection = () => {
                                         className="flex items-center justify-between group/item"
                                     >
                                         <div className="flex items-center gap-3 py-1">
-                                            <div className="text-gray-500 w-4 h-4 group-hover/item:text-white transition-colors duration-300">
+                                            <div className="text-gray-400 dark:text-gray-500 w-4 h-4 group-hover/item:text-primary dark:group-hover/item:text-white transition-colors duration-300">
                                                 {skill.icon}
                                             </div>
-                                            <span className="text-gray-300 group-hover/item:text-white font-medium text-sm transition-colors duration-300">
+                                            <span className="text-gray-700 dark:text-gray-300 group-hover/item:text-gray-900 dark:group-hover/item:text-white font-medium text-sm transition-colors duration-300">
                                                 {skill.name}
                                             </span>
                                         </div>
