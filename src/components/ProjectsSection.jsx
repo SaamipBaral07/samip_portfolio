@@ -36,7 +36,7 @@ const projects = [
         description: "Portfolio website for a DJ client built with Next.js and Tailwind CSS with a contact enquiry form for booking.",
         image: "/projects/dj.png",
         tags: ["NextJS", "Tailwind CSS"],
-        demoUrl: "www.djbugati.com",
+        demoUrl: "https://djbugati.com/",
         githubUrl: "https://github.com/SaamipBaral07"
     },
     {
