@@ -5,6 +5,15 @@ import { motion, AnimatePresence } from "framer-motion";
 const projects = [
     {
         id: 1,
+        title: "OffTrail Nepal",
+        description: "A full-stack trekking platform connecting trekkers, local guides, and homestay hosts with booking and secure authentication.",
+        image: "/projects/project01.png",
+        tags: ["React.js", "Node.js", "Express.js", "PostgreSQL"],
+        demoUrl: "https://offtrailnepal.vercel.app/",
+        githubUrl: "https://github.com/SaamipBaral07/OffTrailNepal"
+    },
+    {
+        id: 2,
         title: "Proforma Insights Website",
         description: "A dynamic company website for Proforma Insights using Django (Python) and React.js, ensuring high performance, scalability, and a seamless user experience for an IT service platform.",
         image: "/projects/proforma.png",
@@ -13,7 +22,7 @@ const projects = [
         githubUrl: "#"
     },
     {
-        id: 2,
+        id: 3,
         title: "ABC Tutoring Website",
         description: "Online tutoring marketplace connecting students and teachers. Built with Next.js, Django, and TypeScript.",
         image: "/projects/abc-tutoring.png",
@@ -22,7 +31,7 @@ const projects = [
         githubUrl: "#"
     },
     {
-        id: 3,
+        id: 4,
         title: "Aastra: E-commerce Store",
         description: "A full-stack eCommerce site using Java Servlets, JSP, and MySQL with DAO and MVC architecture.",
         image: "/projects/project2.png",
@@ -31,7 +40,7 @@ const projects = [
         githubUrl: "https://github.com/SaamipBaral07/Aastra"
     },
     {
-        id: 4,
+        id: 5,
         title: "DJ Portfolio website",
         description: "Portfolio website for a DJ client built with Next.js and Tailwind CSS with a contact enquiry form for booking.",
         image: "/projects/dj.png",
@@ -40,7 +49,7 @@ const projects = [
         githubUrl: "https://github.com/SaamipBaral07"
     },
     {
-        id: 5,
+        id: 6,
         title: "Hostel Finder Platform",
         description: "A Nepal hostel platform where guests book stays and hosts manage listings built with Next.js, Django, and Tailwind CSS.",
         image: "/projects/hostel.png",
@@ -54,15 +63,6 @@ const projects = [
             "/hostel-finder/hostel-4.png",
             "/hostel-finder/hostel-5.png"
         ]
-    },
-    {
-        id: 6,
-        title: "Firebase Social Media",
-        description: "A social media app built with Firebase for backend services, React and TypeScript for the frontend.",
-        image: "/projects/project-1.png",
-        tags: ["React", "Firebase", "TypeScript"],
-        demoUrl: "https://firebasemedia.vercel.app",
-        githubUrl: "#"
     }
 ];
 
