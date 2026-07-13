@@ -44,7 +44,7 @@ const Typewriter = ({ phrases }) => {
 };
 
 export const HeroSection = () => {
-    const professionalPhrases = ["IT scholar", "Full stack developer", "React/NextJS Developer"];
+    const professionalPhrases = ["Full stack developer", "AI/ML Enthusiast", "IT Graduate"];
 
     return (
         <section id="hero" className="relative min-h-[100svh] md:min-h-screen flex items-center justify-center px-4 overflow-hidden pt-20 md:pt-16 pb-20 md:pb-8">
